@@ -1,27 +1,42 @@
 from typing import Any
 
+
 def NULL_not_found(object: Any) -> int:
-    # vérifier None d'abord (identité, pas égalité : seul None est None)
+    """Identify null-like values and print their label, value and type.
+
+    Recognises None, NaN, 0, the empty string and False. Returns 0
+    when the value is recognised, 1 otherwise.
+    """
+    # None first: identity check, only None is None
     if object is None:
         print(f"Nothing: {object} {type(object)}")
-        return (0)
-    # puis NaN (piège 1)
+        return 0
+    # NaN: the only float that is not equal to itself
     elif isinstance(object, float) and object != object:
         print(f"Cheese: {object} {type(object)}")
-        return (0)
-    # puis 0 mais uniquement si c'est un vrai int, pas un bool (piège 2)
+        return 0
+    # bool before int: bool is a subclass of int
     elif isinstance(object, bool):
         print(f"Fake: {object} {type(object)}")
-        return (0)
-    # puis False (le dernier, après 0)
+        return 0
+    # int after bool, so a real 0 lands here
     elif isinstance(object, int):
         print(f"Zero: {object} {type(object)}")
-        return (0)
-    # puis ""
+        return 0
+    # empty string only, "Brian" must not match
     elif isinstance(object, str) and object == "":
-        print(f"Empty:{object} {type(object)}")
-        return (0)
-    # sinon : print("Type not Found") et return 1
+        print(f"Empty: {type(object)}")
+        return 0
+    # not a null-like value
     else:
         print("Type not Found")
-        return (1)
+        return 1
+
+
+def main() -> None:
+    """Run the program: nothing to do, the script is a library."""
+    return None
+
+
+if __name__ == "__main__":
+    main()
