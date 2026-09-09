@@ -6,7 +6,7 @@ def NULL_not_found(object: Any) -> int:
         print(f"Nothing: {object} {type(object)}")
         return (0)
     # puis NaN (piège 1)
-    elif isinstance(object, float):
+    elif isinstance(object, float) and object != object:
         print(f"Cheese: {object} {type(object)}")
         return (0)
     # puis 0 mais uniquement si c'est un vrai int, pas un bool (piège 2)
@@ -18,8 +18,8 @@ def NULL_not_found(object: Any) -> int:
         print(f"Zero: {object} {type(object)}")
         return (0)
     # puis ""
-    elif isinstance(object, str):
-        print(f"Empty: {object} {type(object)}")
+    elif isinstance(object, str) and object == "":
+        print(f"Empty:{object} {type(object)}")
         return (0)
     # sinon : print("Type not Found") et return 1
     else:
