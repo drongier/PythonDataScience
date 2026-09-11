@@ -8,10 +8,10 @@ def main() -> int:
     Returns 1 on error (no conversion possible, or too many arguments).
     """
     try:
-        if len(sys.argv) > 2:
-            raise AssertionError("more than one argument is provided")
         if len(sys.argv) < 2:
             return 0
+        assert len(sys.argv) == 2, "more than one argument is provided"
+
         try:
             number = int(sys.argv[1])
         except ValueError:
