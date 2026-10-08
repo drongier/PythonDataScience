@@ -3,11 +3,7 @@ import sys
 
 
 def count_characters(text: str) -> None:
-    """Print the number of characters of text, grouped by category.
-
-    Categories: upper letters, lower letters, punctuation marks,
-    spaces and digits.
-    """
+    """Print the number of characters of text, grouped by category."""
     upper = 0
     lower = 0
     punctuation = 0
