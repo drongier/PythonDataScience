@@ -1,17 +1,17 @@
-ft_list = ["Hello", "tata!"]
+ft_list = ["Hello"]
 ft_tuple = ("Hello", "toto!")
-ft_set = {"Hello", "tutu!"}
+ft_set = {"Hello", "Hello", "tutu!"}
 ft_dict = {"Hello" : "titi!"}
 
-#list
-ft_list[1] = ft_list[1].replace("tata!", "World")
-#tuple
-ft_tuple = (ft_tuple[0], ft_tuple[1].replace("toto!", "France!"))
-#set
+# list
+ft_list.append("World!")
+# tuple
+ft_tuple = ft_tuple[:1] + ("Germany!",)
+# set
 ft_set.remove("tutu!")
 ft_set.add("Berlin!")
-#dict
-ft_dict["Hello"] = ft_dict["Hello"].replace("titi!", "42Berlin!") 
+# dict
+ft_dict["Hello"] = "42Berlin!"
 
 print(ft_list)
 print(ft_tuple)
