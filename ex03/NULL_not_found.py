@@ -16,11 +16,11 @@ def NULL_not_found(object: Any) -> int:
         print(f"Cheese: {object} {type(object)}")
         return 0
     # bool before int: bool is a subclass of int
-    elif isinstance(object, bool):
+    elif object is False:
         print(f"Fake: {object} {type(object)}")
         return 0
     # int after bool, so a real 0 lands here
-    elif isinstance(object, int):
+    elif type(object) is int and object == 0:
         print(f"Zero: {object} {type(object)}")
         return 0
     # empty string only, "Brian" must not match
