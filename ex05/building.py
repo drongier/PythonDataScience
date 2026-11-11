@@ -33,10 +33,10 @@ def count_characters(text: str) -> None:
 def get_text() -> str:
     """Return the text to analyse.
 
-    Use the single command line argument when provided, otherwise
-    prompt the user on standard input.
+    Use the single command line argument when it is provided and not
+    empty, otherwise prompt the user on standard input.
     """
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 2 and sys.argv[1]:
         return sys.argv[1]
     print("What is the text to count?")
     return sys.stdin.readline()
@@ -45,7 +45,8 @@ def get_text() -> str:
 def main() -> int:
     """Run the character counter program.
 
-    Return 0 on success, 1 when too many arguments are provided.
+    Return 0 on success, 1 when too many arguments are provided or
+    when the user interrupts the input with Ctrl+C.
     """
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
@@ -54,6 +55,9 @@ def main() -> int:
         return 0
     except AssertionError as error:
         print(f"AssertionError: {error}")
+        return 1
+    except KeyboardInterrupt:
+        print()
         return 1
 
 
