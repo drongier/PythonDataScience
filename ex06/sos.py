@@ -2,7 +2,7 @@ import sys
 
 NESTED_MORSE = {
     " ": "/ ", "A": ".- ", "B": "-... ", "C": "-.-. ",
-    "D": "-.. ", "E": ". ", "F": "..-. ", "G": "--. ", 
+    "D": "-.. ", "E": ". ", "F": "..-. ", "G": "--. ",
     "H": ".... ", "I": ".. ", "J": ".--- ", "K": "-.- ",
     "L": ".-.. ", "M": "-- ", "N": "-. ", "O": "--- ",
     "P": ".--. ", "Q": "--.- ", "R": ".-. ", "S": "... ",
@@ -15,7 +15,9 @@ NESTED_MORSE = {
 
 
 def transform_to_morse(texte: str) -> str:
+    """Transforme morse into texte"""
     return "".join(NESTED_MORSE[c] for c in texte.upper()).strip()
+
 
 def main() -> int:
     """Encode an alphanumeric string into Morse code."""
@@ -29,7 +31,7 @@ def main() -> int:
         print(morse)
         return 0
     except AssertionError as error:
-        print(f"AssertionError: {error}")   
+        print(f"AssertionError: {error}")
         return 1
 
 
