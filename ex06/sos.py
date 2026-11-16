@@ -15,7 +15,7 @@ NESTED_MORSE = {
 
 
 def transform_to_morse(texte: str) -> str:
-    """Transforme text into morse"""
+    """Transform text into Morse code."""
     return "".join(NESTED_MORSE[c] for c in texte.upper()).strip()
 
 
