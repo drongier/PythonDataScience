@@ -1,2 +1,5 @@
 __pycache__/
 en.subject.pdf
+dist/
+build/
+*.egg-info/

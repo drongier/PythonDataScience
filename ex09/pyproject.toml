@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "A sample test package"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Dam"},
+    {email = "Dam42@42.com"},
+]
+
+[project.urls]
+Homepage = "https://github.com/drongier/ft_package"
+
