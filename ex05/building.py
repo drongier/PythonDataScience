@@ -1,5 +1,7 @@
-import string
 import sys
+
+
+PUNCTUATION = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
 
 def count_characters(text: str) -> None:
@@ -19,7 +21,7 @@ def count_characters(text: str) -> None:
             digits += 1
         elif char.isspace():
             spaces += 1
-        elif char in string.punctuation:
+        elif char in PUNCTUATION:
             punctuation += 1
 
     print(f"The text contains {len(text)} characters:")
